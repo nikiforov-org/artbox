@@ -12,6 +12,7 @@
 *      alt="..." />
 */
 (function(){
+    
     var artboxes = document.querySelectorAll('[data-artbox]');
 
     if (artboxes.length === 0) {
@@ -19,6 +20,7 @@
     }
 
     for (var i = 0; i < artboxes.length; i++) {
+        
         var
             artbox = artboxes[i];
 
@@ -38,16 +40,16 @@
                 template_caption = '<div class="caption">' + caption + '</div>';
             }
 
-            template_lightbox = '<div id="artbox" style="z-index: ' + maxZIndex() + '">'       +
-                                '   <span class="close">Close</span>'                          +
-                                '   <img src="' + src + '" />'                                 +
-                                    template_caption                                           +
+            template_lightbox = '<div id="artbox">'                     +
+                                '   <span class="close">Close</span>'   +
+                                '   <img src="' + src + '" />'          +
+                                    template_caption                    +
                                 '</div>';
 
             document.body.insertAdjacentHTML('beforeend', template_artbox);
 
             var
-                artbox_body   = document.getElementById('lightbox'),
+                artbox_body   = document.getElementById('artbox'),
                 artbox_close  = artbox_body.querySelector('.close');
 
             artbox_body.addEventListener('click', function() {
